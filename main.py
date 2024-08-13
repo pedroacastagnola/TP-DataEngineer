@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from modules import BDConnect,ApiData
 
 logging.basicConfig(
-    filename='app.log',
+    filename='logs/app.log',
     format='%(asctime)s -> %(levelname)s - %(message)s',
     level=logging.INFO)
 
@@ -27,9 +27,9 @@ if __name__ == '__main__':
  
     try:
         bd.check_connection(schema,table)
-        bd.delete_data(schema,table)
-        data=api.getDataFromTMBD()
-        bd.upload_data(data,table)
+        ##bd.delete_data(schema,table)
+        ##data=api.getDataFromTMBD()
+        ##bd.upload_data(data,table)
         bd.close()
         
     except Exception as ex:
