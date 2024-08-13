@@ -4,12 +4,12 @@ import toml
 
 class ApiData:
     def __init__(self):
-        self.genero=27 #Horror
-        self.cantPaginas=10
 
         with open('config/config.toml', 'r') as f:
             config = toml.load(f)
-            
+
+        self.genero=config['filtros']['genero']
+        self.cantPaginas=config['filtros']['cantPaginas']
         self.url =f"{config['api']['url']}?api_key={config['api']['key']}"
 
     def getDataFromTMBD(self):

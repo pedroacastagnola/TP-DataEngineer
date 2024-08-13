@@ -36,3 +36,18 @@
 2024-08-13 00:55:50,875 -> INFO - Table is now empty
 2024-08-13 00:56:06,317 -> INFO - New data uploaded!
 2024-08-13 00:56:06,318 -> INFO - Connection closed
+2024-08-13 01:06:43,051 -> INFO - Connecting to database...
+2024-08-13 01:06:46,847 -> INFO - Firt row found: ('1023922', 'MaXXXine', 'en', 'In 1980s Hollywood, adult film star and aspiring actress Maxine Minx finally gets her big break. But as a mysterious killer stalks the starlets of Hollywood, a trail of blood threatens to reveal her sinister past.', datetime.date(2024, 7, 4), 6.323, 277.0, datetime.datetime(2024, 8, 13, 0, 55, 55, 674784))
+2024-08-13 01:06:47,459 -> INFO - Table is now empty
+2024-08-13 01:07:03,024 -> INFO - New data uploaded!
+2024-08-13 01:07:03,024 -> INFO - Connection closed
+2024-08-13 01:09:19,058 -> INFO - Connecting to database...
+2024-08-13 01:09:22,809 -> INFO - Firt row found: ('1023922', 'MaXXXine', 'en', 'In 1980s Hollywood, adult film star and aspiring actress Maxine Minx finally gets her big break. But as a mysterious killer stalks the starlets of Hollywood, a trail of blood threatens to reveal her sinister past.', datetime.date(2024, 7, 4), 6.323, 277.0, datetime.datetime(2024, 8, 13, 1, 6, 52, 757955))
+2024-08-13 01:09:23,409 -> INFO - Table is now empty
+2024-08-13 01:09:54,341 -> INFO - New data uploaded!
+2024-08-13 01:09:54,341 -> INFO - Connection closed
+2024-08-13 01:10:44,891 -> INFO - Connecting to database...
+2024-08-13 01:10:48,723 -> INFO - Firt row found: ('573435', 'Bad Boys: Ride or Die', 'en', 'After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.', datetime.date(2024, 6, 5), 7.635, 1497.0, datetime.datetime(2024, 8, 13, 1, 9, 28, 825180))
+2024-08-13 01:10:49,144 -> INFO - Table is now empty
+2024-08-13 01:11:04,388 -> INFO - New data uploaded!
+2024-08-13 01:11:04,389 -> INFO - Connection closed
