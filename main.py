@@ -27,9 +27,9 @@ if __name__ == '__main__':
  
     try:
         bd.check_connection(schema,table)
-        ##bd.delete_data(schema,table)
-        ##data=api.getDataFromTMBD()
-        ##bd.upload_data(data,table)
+        bd.delete_data(schema,table)
+        data=api.getDataFromTMBD()
+        bd.upload_data(data,table)
         bd.close()
         
     except Exception as ex:
