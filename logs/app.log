@@ -26,3 +26,13 @@
 2024-08-13 00:36:43,125 -> INFO - Table is now empty
 2024-08-13 00:36:57,798 -> INFO - New data uploaded!
 2024-08-13 00:36:57,799 -> INFO - Connection closed
+2024-08-13 00:53:50,142 -> INFO - Connecting to database...
+2024-08-13 00:54:17,257 -> INFO - Connecting to database...
+2024-08-13 00:54:21,251 -> INFO - Firt row found: ('1023922', 'MaXXXine', 'en', 'In 1980s Hollywood, adult film star and aspiring actress Maxine Minx finally gets her big break. But as a mysterious killer stalks the starlets of Hollywood, a trail of blood threatens to reveal her sinister past.', datetime.date(2024, 7, 4), 6.323, 277.0, datetime.datetime(2024, 8, 13, 0, 36, 48, 537272))
+2024-08-13 00:54:21,861 -> INFO - Table is now empty
+2024-08-13 00:54:29,440 -> ERROR - 'genre_ids'
+2024-08-13 00:55:46,593 -> INFO - Connecting to database...
+2024-08-13 00:55:50,400 -> INFO - Table doesn't contain any data
+2024-08-13 00:55:50,875 -> INFO - Table is now empty
+2024-08-13 00:56:06,317 -> INFO - New data uploaded!
+2024-08-13 00:56:06,318 -> INFO - Connection closed

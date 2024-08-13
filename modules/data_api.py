@@ -1,12 +1,16 @@
 import pandas as pd
 import requests
-
+import toml
 
 class ApiData:
     def __init__(self):
         self.genero=27 #Horror
         self.cantPaginas=10
-        self.url="https://api.themoviedb.org/3/discover/movie?api_key=6ceef2635cf1b5e53898952f9183a67e"
+
+        with open('config/config.toml', 'r') as f:
+            config = toml.load(f)
+            
+        self.url =f"{config['api']['url']}?api_key={config['api']['key']}"
 
     def getDataFromTMBD(self):
         df=pd.DataFrame()
