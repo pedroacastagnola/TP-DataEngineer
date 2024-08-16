@@ -39,6 +39,28 @@ class BDConnect:
                 logging.info("Firt row found: "+str(cr.fetchone()))
         except Exception as e:
             raise Exception("Checking connection query failed",e)
+        
+
+    def read_data(self,schema,table):
+        try:
+            cr=self.engine.raw_connection().cursor()
+            cr.execute(f"SELECT id FROM {schema}.{table};")
+            data=cr.fetchall()
+            if (data== None):
+                logging.info("Table doesn't contain any data")
+            else:
+                logging.info("Movie ids found in DB: "+str(data))
+                
+            return self.tuple_list_into_list(data)
+            
+        except Exception as e:
+            raise Exception("Checking connection query failed",e)
+        
+    def tuple_list_into_list(self,tlist):
+        idList=[]
+        for tupleId in tlist:
+            idList.extend(tupleId)
+        return idList
 
     def delete_data(self,schema,table):
         try:
@@ -51,17 +73,23 @@ class BDConnect:
             raise Exception("Deleting all data from table failed",e)
 
 
-    def upload_data(self,data,table):
+    def upload_data(self,APIdata,BDdata,table):
         try:
-            data['insert_date']=datetime.now()
-            data.to_sql(
-                name=table,
-                con=self.engine,
-                schema=self.schema,
-                if_exists='append',
-                index=False
-            )
-            logging.info("New data uploaded!")
+            sinDuplicados=APIdata[~APIdata['id'].isin(BDdata)].copy()
+            if not(sinDuplicados.empty):
+                sinDuplicados.loc[:,'insert_date']=datetime.now()
+                logging.info("Uploading new data: "+str(sinDuplicados.to_dict()))
+                sinDuplicados.to_sql(
+                    name=table,
+                    con=self.engine,
+                    schema=self.schema,
+                    if_exists='append',
+                    index=False
+                )
+                logging.info("New data uploaded!")
+            else:
+                logging.info("No new data to upload!")
+            
         except Exception as e:
             raise Exception("Error when uploading data: ",e)
             

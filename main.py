@@ -26,10 +26,9 @@ if __name__ == '__main__':
     api=ApiData()
  
     try:
-        bd.check_connection(schema,table)
-        bd.delete_data(schema,table)
-        data=api.getDataFromTMBD()
-        bd.upload_data(data,table)
+        BDdata=bd.read_data(schema,table)
+        APIdata=api.getDataFromTMBD()
+        bd.upload_data(APIdata,BDdata,table)
         bd.close()
         
     except Exception as ex:
