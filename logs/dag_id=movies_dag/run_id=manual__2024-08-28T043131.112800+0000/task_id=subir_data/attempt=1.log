@@ -1,0 +1,175 @@
+[2024-08-28T04:31:43.275+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-08-28T04:31:43.436+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movies_dag.subir_data manual__2024-08-28T04:31:31.112800+00:00 [queued]>
+[2024-08-28T04:31:43.444+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movies_dag.subir_data manual__2024-08-28T04:31:31.112800+00:00 [queued]>
+[2024-08-28T04:31:43.445+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 4
+[2024-08-28T04:31:43.457+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): subir_data> on 2024-08-28 04:31:31.112800+00:00
+[2024-08-28T04:31:43.464+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=77) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-28T04:31:43.466+0000] {standard_task_runner.py:72} INFO - Started process 79 to run task
+[2024-08-28T04:31:43.465+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'movies_dag', 'subir_data', 'manual__2024-08-28T04:31:31.112800+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpgfxhuyin']
+[2024-08-28T04:31:43.467+0000] {standard_task_runner.py:105} INFO - Job 55: Subtask subir_data
+[2024-08-28T04:31:43.505+0000] {task_command.py:467} INFO - Running <TaskInstance: movies_dag.subir_data manual__2024-08-28T04:31:31.112800+00:00 [running]> on host e1752bf327c8
+[2024-08-28T04:31:43.579+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='pedro' AIRFLOW_CTX_DAG_ID='movies_dag' AIRFLOW_CTX_TASK_ID='subir_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-28T04:31:31.112800+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-28T04:31:31.112800+00:00'
+[2024-08-28T04:31:43.580+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-08-28T04:31:46.580+0000] {bd_connect.py:53} INFO - Movie ids found in DB: []
+[2024-08-28T04:31:51.335+0000] {logging_mixin.py:190} INFO -           id                        title  ... vote_average vote_count
+11    945961               Alien: Romulus  ...        7.200        669
+12    762441       A Quiet Place: Day One  ...        6.858       1505
+13   1245708                Crescent City  ...        6.365         27
+14   1226578                     Longlegs  ...        6.554        451
+26    804616       Something in the Water  ...        6.083        127
+30     36239      Slaughtered Vomit Dolls  ...        4.152         99
+32   1225377               The Mouse Trap  ...        5.100         19
+39   1216191                       Oddity  ...        6.500         74
+40   1154864                       Cursed  ...        4.700          6
+42       348                        Alien  ...        8.154      14372
+46   1139106               We Are Zombies  ...        5.267         15
+51   1300962             The Beast Within  ...        5.700         37
+52    852432                    The Tower  ...        4.506         86
+57    646683                 The Exorcism  ...        4.568        125
+60    957452                     The Crow  ...        5.246         61
+65   1174618          Alice in Terrorland  ...        5.959        135
+66   1001311                  Under Paris  ...        6.035       1062
+68   1023922                     MaXXXine  ...        6.417        396
+69   1024721                     Monolith  ...        5.500         70
+70      4513             30 Days of Night  ...        6.400       2698
+74   1032823                         Trap  ...        6.365        420
+77    976830                The Deep Dark  ...        5.400         57
+82    126889              Alien: Covenant  ...        6.129       8406
+87   1207898   The Jack in the Box: Rises  ...        6.929         91
+88   1097150                   Deliver Us  ...        5.660         47
+90   1010600     The Strangers: Chapter 1  ...        5.939        287
+91    917496      Beetlejuice Beetlejuice  ...        0.000          0
+93    938614    Late Night with the Devil  ...        7.325        729
+94   1175038        Stranger in the Woods  ...        6.253         83
+102  1208704                         Dagr  ...        4.333          6
+104   719221                        Tarot  ...        6.679        828
+105   940721           Godzilla Minus One  ...        7.600       2066
+108  1086747                 The Watchers  ...        6.520        695
+110   437342               The First Omen  ...        6.872        779
+114  1096197                    No Way Up  ...        6.418        883
+116  1241674              The Last Breath  ...        6.519         52
+119  1159518                  Black Noise  ...        5.250         24
+123     8078           Alien Resurrection  ...        6.155       4773
+132  1041613                   Immaculate  ...        6.313        939
+138  1214509          In a Violent Nature  ...        5.791        153
+142     8077                       Alien³  ...        6.367       5491
+151      440  Aliens vs Predator: Requiem  ...        5.169       2816
+157  1179558                   15 Cameras  ...        6.111         18
+177   444483                   Vassalord.  ...        5.385         13
+178  1308757                     Dead Sea  ...        6.934         99
+179  1111873                      Abigail  ...        6.824        983
+180  1265517  You Shall Not Sleep Tonight  ...        0.000          0
+
+[47 rows x 7 columns]
+[2024-08-28T04:31:51.355+0000] {logging_mixin.py:190} INFO - 1           id                        title  ... vote_average vote_count
+11    945961               Alien: Romulus  ...        7.200        669
+12    762441       A Quiet Place: Day One  ...        6.858       1505
+13   1245708                Crescent City  ...        6.365         27
+14   1226578                     Longlegs  ...        6.554        451
+26    804616       Something in the Water  ...        6.083        127
+30     36239      Slaughtered Vomit Dolls  ...        4.152         99
+32   1225377               The Mouse Trap  ...        5.100         19
+39   1216191                       Oddity  ...        6.500         74
+40   1154864                       Cursed  ...        4.700          6
+42       348                        Alien  ...        8.154      14372
+46   1139106               We Are Zombies  ...        5.267         15
+51   1300962             The Beast Within  ...        5.700         37
+52    852432                    The Tower  ...        4.506         86
+57    646683                 The Exorcism  ...        4.568        125
+60    957452                     The Crow  ...        5.246         61
+65   1174618          Alice in Terrorland  ...        5.959        135
+66   1001311                  Under Paris  ...        6.035       1062
+68   1023922                     MaXXXine  ...        6.417        396
+69   1024721                     Monolith  ...        5.500         70
+70      4513             30 Days of Night  ...        6.400       2698
+74   1032823                         Trap  ...        6.365        420
+77    976830                The Deep Dark  ...        5.400         57
+82    126889              Alien: Covenant  ...        6.129       8406
+87   1207898   The Jack in the Box: Rises  ...        6.929         91
+88   1097150                   Deliver Us  ...        5.660         47
+90   1010600     The Strangers: Chapter 1  ...        5.939        287
+91    917496      Beetlejuice Beetlejuice  ...        0.000          0
+93    938614    Late Night with the Devil  ...        7.325        729
+94   1175038        Stranger in the Woods  ...        6.253         83
+102  1208704                         Dagr  ...        4.333          6
+104   719221                        Tarot  ...        6.679        828
+105   940721           Godzilla Minus One  ...        7.600       2066
+108  1086747                 The Watchers  ...        6.520        695
+110   437342               The First Omen  ...        6.872        779
+114  1096197                    No Way Up  ...        6.418        883
+116  1241674              The Last Breath  ...        6.519         52
+119  1159518                  Black Noise  ...        5.250         24
+123     8078           Alien Resurrection  ...        6.155       4773
+132  1041613                   Immaculate  ...        6.313        939
+138  1214509          In a Violent Nature  ...        5.791        153
+142     8077                       Alien³  ...        6.367       5491
+151      440  Aliens vs Predator: Requiem  ...        5.169       2816
+157  1179558                   15 Cameras  ...        6.111         18
+177   444483                   Vassalord.  ...        5.385         13
+178  1308757                     Dead Sea  ...        6.934         99
+179  1111873                      Abigail  ...        6.824        983
+180  1265517  You Shall Not Sleep Tonight  ...        0.000          0
+
+[47 rows x 7 columns]
+[2024-08-28T04:31:51.356+0000] {logging_mixin.py:190} INFO - 2 []
+[2024-08-28T04:31:51.356+0000] {logging_mixin.py:190} INFO - api_tmdb_pelis_terror
+[2024-08-28T04:31:51.380+0000] {logging_mixin.py:190} INFO - 3           id                        title  ... vote_average vote_count
+11    945961               Alien: Romulus  ...        7.200        669
+12    762441       A Quiet Place: Day One  ...        6.858       1505
+13   1245708                Crescent City  ...        6.365         27
+14   1226578                     Longlegs  ...        6.554        451
+26    804616       Something in the Water  ...        6.083        127
+30     36239      Slaughtered Vomit Dolls  ...        4.152         99
+32   1225377               The Mouse Trap  ...        5.100         19
+39   1216191                       Oddity  ...        6.500         74
+40   1154864                       Cursed  ...        4.700          6
+42       348                        Alien  ...        8.154      14372
+46   1139106               We Are Zombies  ...        5.267         15
+51   1300962             The Beast Within  ...        5.700         37
+52    852432                    The Tower  ...        4.506         86
+57    646683                 The Exorcism  ...        4.568        125
+60    957452                     The Crow  ...        5.246         61
+65   1174618          Alice in Terrorland  ...        5.959        135
+66   1001311                  Under Paris  ...        6.035       1062
+68   1023922                     MaXXXine  ...        6.417        396
+69   1024721                     Monolith  ...        5.500         70
+70      4513             30 Days of Night  ...        6.400       2698
+74   1032823                         Trap  ...        6.365        420
+77    976830                The Deep Dark  ...        5.400         57
+82    126889              Alien: Covenant  ...        6.129       8406
+87   1207898   The Jack in the Box: Rises  ...        6.929         91
+88   1097150                   Deliver Us  ...        5.660         47
+90   1010600     The Strangers: Chapter 1  ...        5.939        287
+91    917496      Beetlejuice Beetlejuice  ...        0.000          0
+93    938614    Late Night with the Devil  ...        7.325        729
+94   1175038        Stranger in the Woods  ...        6.253         83
+102  1208704                         Dagr  ...        4.333          6
+104   719221                        Tarot  ...        6.679        828
+105   940721           Godzilla Minus One  ...        7.600       2066
+108  1086747                 The Watchers  ...        6.520        695
+110   437342               The First Omen  ...        6.872        779
+114  1096197                    No Way Up  ...        6.418        883
+116  1241674              The Last Breath  ...        6.519         52
+119  1159518                  Black Noise  ...        5.250         24
+123     8078           Alien Resurrection  ...        6.155       4773
+132  1041613                   Immaculate  ...        6.313        939
+138  1214509          In a Violent Nature  ...        5.791        153
+142     8077                       Alien³  ...        6.367       5491
+151      440  Aliens vs Predator: Requiem  ...        5.169       2816
+157  1179558                   15 Cameras  ...        6.111         18
+177   444483                   Vassalord.  ...        5.385         13
+178  1308757                     Dead Sea  ...        6.934         99
+179  1111873                      Abigail  ...        6.824        983
+180  1265517  You Shall Not Sleep Tonight  ...        0.000          0
+
+[47 rows x 7 columns]
+[2024-08-28T04:31:51.394+0000] {logging_mixin.py:190} INFO - Uploading new data: {'id': {11: 945961, 12: 762441, 13: 1245708, 14: 1226578, 26: 804616, 30: 36239, 32: 1225377, 39: 1216191, 40: 1154864, 42: 348, 46: 1139106, 51: 1300962, 52: 852432, 57: 646683, 60: 957452, 65: 1174618, 66: 1001311, 68: 1023922, 69: 1024721, 70: 4513, 74: 1032823, 77: 976830, 82: 126889, 87: 1207898, 88: 1097150, 90: 1010600, 91: 917496, 93: 938614, 94: 1175038, 102: 1208704, 104: 719221, 105: 940721, 108: 1086747, 110: 437342, 114: 1096197, 116: 1241674, 119: 1159518, 123: 8078, 132: 1041613, 138: 1214509, 142: 8077, 151: 440, 157: 1179558, 177: 444483, 178: 1308757, 179: 1111873, 180: 1265517}, 'title': {11: 'Alien: Romulus', 12: 'A Quiet Place: Day One', 13: 'Crescent City', 14: 'Longlegs', 26: 'Something in the Water', 30: 'Slaughtered Vomit Dolls', 32: 'The Mouse Trap', 39: 'Oddity', 40: 'Cursed', 42: 'Alien', 46: 'We Are Zombies', 51: 'The Beast Within', 52: 'The Tower', 57: 'The Exorcism', 60: 'The Crow', 65: 'Alice in Terrorland', 66: 'Under Paris', 68: 'MaXXXine', 69: 'Monolith', 70: '30 Days of Night', 74: 'Trap', 77: 'The Deep Dark', 82: 'Alien: Covenant', 87: 'The Jack in the Box: Rises', 88: 'Deliver Us', 90: 'The Strangers: Chapter 1', 91: 'Beetlejuice Beetlejuice', 93: 'Late Night with the Devil', 94: 'Stranger in the Woods', 102: 'Dagr', 104: 'Tarot', 105: 'Godzilla Minus One', 108: 'The Watchers', 110: 'The First Omen', 114: 'No Way Up', 116: 'The Last Breath', 119: 'Black Noise', 123: 'Alien Resurrection', 132: 'Immaculate', 138: 'In a Violent Nature', 142: 'Alien³', 151: 'Aliens vs Predator: Requiem', 157: '15 Cameras', 177: 'Vassalord.', 178: 'Dead Sea', 179: 'Abigail', 180: 'You Shall Not Sleep Tonight'}, 'original_language': {11: 'en', 12: 'en', 13: 'en', 14: 'en', 26: 'en', 30: 'en', 32: 'en', 39: 'en', 40: 'es', 42: 'en', 46: 'en', 51: 'en', 52: 'fr', 57: 'en', 60: 'en', 65: 'en', 66: 'fr', 68: 'en', 69: 'en', 70: 'en', 74: 'en', 77: 'fr', 82: 'en', 87: 'en', 88: 'en', 90: 'en', 91: 'en', 93: 'en', 94: 'en', 102: 'en', 104: 'en', 105: 'ja', 108: 'en', 110: 'en', 114: 'en', 116: 'en', 119: 'en', 123: 'en', 132: 'en', 138: 'en', 142: 'en', 151: 'en', 157: 'en', 177: 'ja', 178: 'en', 179: 'en', 180: 'en'}, 'overview': {11: 'While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.', 12: 'As New York City is invaded by alien creatures who hunt by sound, a woman named Sam fights to survive with her cat.', 13: 'When a ruthless serial killer terrorizes a small Southern town, everyone becomes a suspect -- including local authorities. As the body count rises and the dark mystery deepens, the chief detective becomes haunted by the horrors of his past.', 14: 'FBI Agent Lee Harker is assigned to an unsolved serial killer case that takes an unexpected turn, revealing evidence of the occult. Harker discovers a personal connection to the killer and must stop him before he strikes again.', 26: 'Reunited at an exotic destination wedding, five girlfriends decide to rent a boat to spend a day together along the paradise-like coast. Their friendship is put to the ultimate test when they find themselves stranded in open water fighting for their lives against sharks and mother nature as they desperately try to survive.', 30: 'The gruesome tapestry of psychological manifestations of a nineteen year old bulimic runaway stripper-turned prostitute as she descends into a hellish pit of satanic nightmares and hallucinations.', 32: "It's Alex's 21st Birthday, but she's stuck at the amusement arcade on a late shift so her friends decide to surprise her, but a masked killer dressed as Mickey Mouse decides to play a game of his own with them which she must survive.", 39: 'After the brutal murder of her twin sister, Darcy goes after those responsible by using haunted items as her tools for revenge.', 40: 'The lives of six girls belong to different worlds although connected to each other through a doll called Molly, whose existence dates back to 1976, when she appeared among the rubble of the great fire of the San Carlos orphanage, in northern Spain', 42: 'During its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.', 46: 'In a city infested with the LIVING-IMPAIRED aka non-cannibal zombies - three slackers after easy money must fight small-time crooks and an evil megacorporation to save their kidnapped grandma.', 51: "Ten-year-old Willow follows her parents on one of their secret late-night treks to the heart of an ancient forest. After witnessing her father undergo a terrible transformation, she too becomes ensnared by the dark ancestral secret that they've so desperately tried to conceal.", 52: 'In the heart of a city, the inhabitants of a tower wake up one morning to find that their building is shrouded in an opaque fog, obstructing doors and windows - a strange dark matter that devours anything that tries to pass through it. Trapped, the residents try to organize themselves, but to ensure their survival they gradually succumb to their most primitive instincts, until they sink into horror...', 57: "A troubled actor begins to unravel while shooting a supernatural horror film, leading his estranged daughter to wonder if he's slipping back into his past addictions or if there's something more sinister at play.", 60: 'Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.', 65: 'A recently bereaved teenage girl goes to live with her aunt in a secluded woodland house, unaware that sinister forces lurk within.', 66: 'In order to save Paris from an international bloodbath, a grieving scientist is forced to face her tragic past when a giant shark appears in the Seine.', 68: 'In 1980s Hollywood, adult film star and aspiring actress Maxine Minx finally gets her big break. But as a mysterious killer stalks the starlets of Hollywood, a trail of blood threatens to reveal her sinister past.', 69: 'A desperate young journalist turns to podcasting to salvage her career, but her rush to make headlines leads her to an alien conspiracy.', 70: "This is the story of an isolated Alaskan town that is plunged into darkness for a month each year when the sun sinks below the horizon. As the last rays of light fade, the town is attacked by a bloodthirsty gang of vampires bent on an uninterrupted orgy of destruction. Only the small town's husband-and-wife Sheriff team stand between the survivors and certain destruction.", 74: "A father and teen daughter attend a pop concert, where they realize they're at the center of a dark and sinister event.", 77: '1956, in the north of France. A group of underground miners is forced to take a professor to take samples a thousand meters underground. After a landslide that prevents them from going back up, they discover a crypt from another time, and unknowingly awaken a legendary bloodthirsty creature.', 82: 'The crew of the colony ship Covenant, bound for a remote planet on the far side of the galaxy, discovers what they think is an uncharted paradise but is actually a dark, dangerous world.', 87: "When a creepy Jack-in-the-Box is discovered and opened on the grounds of an exclusive girls' school, six brave students soon enter a fight to the finish against the unleashed demon.", 88: 'When a nun in a remote convent claims immaculate conception, the Vatican sends a team of priests to investigate, concerned about an ancient prophecy that a woman will give birth to twin boys: one the Messiah, the other the Antichrist.', 90: 'After their car breaks down in an eerie small town, a young couple are forced to spend the night in a remote cabin. Panic ensues as they are terrorized by three masked strangers who strike with no mercy and seemingly no motives.', 91: "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.", 93: "A live broadcast of a late-night talk show in 1977 goes horribly wrong, unleashing evil into the nation's living rooms.", 94: "Olivia and her friends go on a vacation. After Olivia nearly drowns with a slit wrist in her bathtub after her fiancé's funeral, her friends suspect that she tried to kill herself, but she believes someone attacked her.", 102: 'Fame seeking YouTubers find themselves in a paranormal nightmare when the advert team they are attempting to steal from awakens a druid demon from the past.', 104: 'When a group of friends recklessly violate the sacred rule of Tarot readings, they unknowingly unleash an unspeakable evil trapped within the cursed cards. One by one, they come face to face with fate and end up in a race against death.', 105: 'In postwar Japan, Godzilla brings new devastation to an already scorched landscape. With no military intervention or government help in sight, the survivors must join together in the face of despair and fight back against an unrelenting horror.', 108: 'A young artist gets stranded in an extensive, immaculate forest in western Ireland, where, after finding shelter, she becomes trapped alongside three strangers, stalked by mysterious creatures each night.', 110: 'When a young American woman is sent to Rome to begin a life of service to the church, she encounters a darkness that causes her to question her own faith and uncovers a terrifying conspiracy that hopes to bring about the birth of evil incarnate.', 114: "Characters from different backgrounds are thrown together when the plane they're travelling on crashes into the Pacific Ocean. A nightmare fight for survival ensues with the air supply running out and dangers creeping in from all sides.", 116: 'A group of old college friends reunite on a Caribbean scuba diving trip exploring the wreckage of a WWII battleship and find themselves trapped inside the underwater labyrinth of rusted metal surrounded by great white sharks.', 119: 'Members of an elite security team deployed to rescue a VIP on an exclusive island.The rescue mission becomes a desperate attempt to survive, escape the island and elude the sinister presence that seeks to harm them.', 123: 'Two hundred years after Lt. Ripley died, a group of scientists clone her, hoping to breed the ultimate weapon. But the new Ripley is full of surprises … as are the new aliens. Ripley must team with a band of smugglers to keep the creatures from reaching Earth.', 132: 'An American nun embarks on a new journey when she joins a remote convent in the Italian countryside. However, her warm welcome quickly turns into a living nightmare when she discovers her new home harbours a sinister secret and unspeakable horrors.', 138: 'The enigmatic resurrection, rampage, and retribution of an undead monster in a remote wilderness unleashes an iconic new killer after a locket is removed from a collapsed fire tower that entombed its rotting corpse.', 142: 'After escaping with Newt and Hicks from the alien planet, Ripley crash lands on Fiorina 161, a prison planet and host to a correctional facility. Unfortunately, although Newt and Hicks do not survive the crash, a more unwelcome visitor does. The prison does not allow weapons of any kind, and with aid being a long time away, the prisoners must simply survive in any way they can.', 151: 'After a horrifying PredAlien crash-lands near a small Colorado town, killing everyone it encounters and producing countless Alien offspring, a lone Predator arrives to "clean up" the infestation.', 157: "A couple buys a house from The Slumlord Tapes, infamous for hidden cameras and a psycho landlord. It's not as safe as they tell themselves.", 177: "Charley, a cyborg vampire who does the Vatican's dirty work, is the thrall of the local vampire playboy Johnny Rayflo. As the two fight crime—and each other—hilarity, violence and sacrilege ensue! But can Charley resist his own desperate cravings for blood? Find out as the devilish duo go up aginst a childlike vampire princess, a mysterious branch of the Unitarian Church...and one another.", 178: "Stranded in the open sea after a fatal accident, a young woman and her two friends are rescued by a fishing vessel's captain, unaware that the ship harbors a chilling secret.", 179: 'A group of criminals kidnaps a teenage ballet dancer, the daughter of a notorious gang leader, in order to obtain a ransom of $50 million, but over time, they discover that she is not just an ordinary girl. After the kidnappers begin to diminish, one by one, they discover, to their increasing horror, that they are locked inside with an unusual girl.', 180: "A boy is haunted by terrifying nightmares where a monster lurks inside the closet. To his relief, his father appears in the middle of the night helping him to face his fears. But the boy will begin to question the true nature of these apparitions, having to face the truth about his father's destiny and the evil force that threatens to consume him."}, 'release_date': {11: '2024-08-13', 12: '2024-06-26', 13: '2024-08-16', 14: '2024-07-10', 26: '2024-03-22', 30: '2006-02-14', 32: '2024-08-23', 39: '2024-07-19', 40: '2023-10-20', 42: '1979-05-25', 46: '2024-07-17', 51: '2024-07-22', 52: '2023-02-08', 57: '2024-05-30', 60: '2024-08-21', 65: '2023-12-26', 66: '2024-06-04', 68: '2024-07-04', 69: '2023-10-26', 70: '2007-10-17', 74: '2024-07-31', 77: '2023-11-15', 82: '2017-05-09', 87: '2024-01-18', 88: '2023-08-30', 90: '2024-05-15', 91: '2024-09-04', 93: '2024-03-19', 94: '2024-02-14', 102: '2024-03-24', 104: '2024-05-01', 105: '2023-11-03', 108: '2024-06-06', 110: '2024-04-03', 114: '2024-01-18', 116: '2024-06-28', 119: '2023-11-03', 123: '1997-11-12', 132: '2024-03-20', 138: '2024-05-31', 142: '1992-05-22', 151: '2007-12-25', 157: '2023-10-13', 177: '2013-03-15', 178: '2024-07-26', 179: '2024-04-16', 180: '2024-08-01'}, 'vote_average': {11: 7.2, 12: 6.858, 13: 6.365, 14: 6.554, 26: 6.083, 30: 4.152, 32: 5.1, 39: 6.5, 40: 4.7, 42: 8.154, 46: 5.267, 51: 5.7, 52: 4.506, 57: 4.568, 60: 5.246, 65: 5.959, 66: 6.035, 68: 6.417, 69: 5.5, 70: 6.4, 74: 6.365, 77: 5.4, 82: 6.129, 87: 6.929, 88: 5.66, 90: 5.939, 91: 0.0, 93: 7.325, 94: 6.253, 102: 4.333, 104: 6.679, 105: 7.6, 108: 6.52, 110: 6.872, 114: 6.418, 116: 6.519, 119: 5.25, 123: 6.155, 132: 6.313, 138: 5.791, 142: 6.367, 151: 5.169, 157: 6.111, 177: 5.385, 178: 6.934, 179: 6.824, 180: 0.0}, 'vote_count': {11: 669, 12: 1505, 13: 27, 14: 451, 26: 127, 30: 99, 32: 19, 39: 74, 40: 6, 42: 14372, 46: 15, 51: 37, 52: 86, 57: 125, 60: 61, 65: 135, 66: 1062, 68: 396, 69: 70, 70: 2698, 74: 420, 77: 57, 82: 8406, 87: 91, 88: 47, 90: 287, 91: 0, 93: 729, 94: 83, 102: 6, 104: 828, 105: 2066, 108: 695, 110: 779, 114: 883, 116: 52, 119: 24, 123: 4773, 132: 939, 138: 153, 142: 5491, 151: 2816, 157: 18, 177: 13, 178: 99, 179: 983, 180: 0}, 'insert_date': {11: Timestamp('2024-08-28 04:31:51.381650'), 12: Timestamp('2024-08-28 04:31:51.381650'), 13: Timestamp('2024-08-28 04:31:51.381650'), 14: Timestamp('2024-08-28 04:31:51.381650'), 26: Timestamp('2024-08-28 04:31:51.381650'), 30: Timestamp('2024-08-28 04:31:51.381650'), 32: Timestamp('2024-08-28 04:31:51.381650'), 39: Timestamp('2024-08-28 04:31:51.381650'), 40: Timestamp('2024-08-28 04:31:51.381650'), 42: Timestamp('2024-08-28 04:31:51.381650'), 46: Timestamp('2024-08-28 04:31:51.381650'), 51: Timestamp('2024-08-28 04:31:51.381650'), 52: Timestamp('2024-08-28 04:31:51.381650'), 57: Timestamp('2024-08-28 04:31:51.381650'), 60: Timestamp('2024-08-28 04:31:51.381650'), 65: Timestamp('2024-08-28 04:31:51.381650'), 66: Timestamp('2024-08-28 04:31:51.381650'), 68: Timestamp('2024-08-28 04:31:51.381650'), 69: Timestamp('2024-08-28 04:31:51.381650'), 70: Timestamp('2024-08-28 04:31:51.381650'), 74: Timestamp('2024-08-28 04:31:51.381650'), 77: Timestamp('2024-08-28 04:31:51.381650'), 82: Timestamp('2024-08-28 04:31:51.381650'), 87: Timestamp('2024-08-28 04:31:51.381650'), 88: Timestamp('2024-08-28 04:31:51.381650'), 90: Timestamp('2024-08-28 04:31:51.381650'), 91: Timestamp('2024-08-28 04:31:51.381650'), 93: Timestamp('2024-08-28 04:31:51.381650'), 94: Timestamp('2024-08-28 04:31:51.381650'), 102: Timestamp('2024-08-28 04:31:51.381650'), 104: Timestamp('2024-08-28 04:31:51.381650'), 105: Timestamp('2024-08-28 04:31:51.381650'), 108: Timestamp('2024-08-28 04:31:51.381650'), 110: Timestamp('2024-08-28 04:31:51.381650'), 114: Timestamp('2024-08-28 04:31:51.381650'), 116: Timestamp('2024-08-28 04:31:51.381650'), 119: Timestamp('2024-08-28 04:31:51.381650'), 123: Timestamp('2024-08-28 04:31:51.381650'), 132: Timestamp('2024-08-28 04:31:51.381650'), 138: Timestamp('2024-08-28 04:31:51.381650'), 142: Timestamp('2024-08-28 04:31:51.381650'), 151: Timestamp('2024-08-28 04:31:51.381650'), 157: Timestamp('2024-08-28 04:31:51.381650'), 177: Timestamp('2024-08-28 04:31:51.381650'), 178: Timestamp('2024-08-28 04:31:51.381650'), 179: Timestamp('2024-08-28 04:31:51.381650'), 180: Timestamp('2024-08-28 04:31:51.381650')}}
+[2024-08-28T04:32:15.622+0000] {bd_connect.py:94} INFO - New data uploaded!
+[2024-08-28T04:32:15.624+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-08-28T04:32:15.636+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-08-28T04:32:15.637+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=movies_dag, task_id=subir_data, run_id=manual__2024-08-28T04:31:31.112800+00:00, execution_date=20240828T043131, start_date=20240828T043143, end_date=20240828T043215
+[2024-08-28T04:32:15.676+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-08-28T04:32:15.694+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-28T04:32:15.696+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

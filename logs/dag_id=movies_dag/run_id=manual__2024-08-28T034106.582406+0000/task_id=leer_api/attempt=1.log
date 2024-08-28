@@ -1,0 +1,70 @@
+[2024-08-28T03:41:12.985+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-08-28T03:41:13.157+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: movies_dag.leer_api manual__2024-08-28T03:41:06.582406+00:00 [queued]>
+[2024-08-28T03:41:13.166+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: movies_dag.leer_api manual__2024-08-28T03:41:06.582406+00:00 [queued]>
+[2024-08-28T03:41:13.167+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 4
+[2024-08-28T03:41:13.180+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): leer_api> on 2024-08-28 03:41:06.582406+00:00
+[2024-08-28T03:41:13.189+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=163) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-28T03:41:13.191+0000] {standard_task_runner.py:72} INFO - Started process 165 to run task
+[2024-08-28T03:41:13.191+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'movies_dag', 'leer_api', 'manual__2024-08-28T03:41:06.582406+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/dag_etl.py', '--cfg-path', '/tmp/tmpp65yniag']
+[2024-08-28T03:41:13.193+0000] {standard_task_runner.py:105} INFO - Job 20: Subtask leer_api
+[2024-08-28T03:41:13.240+0000] {task_command.py:467} INFO - Running <TaskInstance: movies_dag.leer_api manual__2024-08-28T03:41:06.582406+00:00 [running]> on host e1752bf327c8
+[2024-08-28T03:41:13.328+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='pedro' AIRFLOW_CTX_DAG_ID='movies_dag' AIRFLOW_CTX_TASK_ID='leer_api' AIRFLOW_CTX_EXECUTION_DATE='2024-08-28T03:41:06.582406+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-28T03:41:06.582406+00:00'
+[2024-08-28T03:41:13.329+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-08-28T03:41:18.015+0000] {logging_mixin.py:190} INFO -           id                        title  ... vote_average vote_count
+11    945961               Alien: Romulus  ...        7.200        669
+12    762441       A Quiet Place: Day One  ...        6.858       1505
+13   1245708                Crescent City  ...        6.365         27
+14   1226578                     Longlegs  ...        6.554        451
+26    804616       Something in the Water  ...        6.083        127
+30     36239      Slaughtered Vomit Dolls  ...        4.152         99
+32   1225377               The Mouse Trap  ...        5.100         19
+39   1216191                       Oddity  ...        6.500         74
+40   1154864                       Cursed  ...        4.700          6
+42       348                        Alien  ...        8.154      14372
+46   1139106               We Are Zombies  ...        5.267         15
+51   1300962             The Beast Within  ...        5.700         37
+52    852432                    The Tower  ...        4.506         86
+57    646683                 The Exorcism  ...        4.568        125
+60    957452                     The Crow  ...        5.246         61
+65   1174618          Alice in Terrorland  ...        5.959        135
+66   1001311                  Under Paris  ...        6.035       1062
+68   1023922                     MaXXXine  ...        6.417        396
+69   1024721                     Monolith  ...        5.500         70
+70      4513             30 Days of Night  ...        6.400       2698
+74   1032823                         Trap  ...        6.365        420
+77    976830                The Deep Dark  ...        5.400         57
+82    126889              Alien: Covenant  ...        6.129       8406
+87   1207898   The Jack in the Box: Rises  ...        6.929         91
+88   1097150                   Deliver Us  ...        5.660         47
+90   1010600     The Strangers: Chapter 1  ...        5.939        287
+91    917496      Beetlejuice Beetlejuice  ...        0.000          0
+93    938614    Late Night with the Devil  ...        7.325        729
+94   1175038        Stranger in the Woods  ...        6.253         83
+102  1208704                         Dagr  ...        4.333          6
+104   719221                        Tarot  ...        6.679        828
+105   940721           Godzilla Minus One  ...        7.600       2066
+108  1086747                 The Watchers  ...        6.520        695
+110   437342               The First Omen  ...        6.872        779
+114  1096197                    No Way Up  ...        6.418        883
+116  1241674              The Last Breath  ...        6.519         52
+119  1159518                  Black Noise  ...        5.250         24
+123     8078           Alien Resurrection  ...        6.155       4773
+132  1041613                   Immaculate  ...        6.313        939
+138  1214509          In a Violent Nature  ...        5.791        153
+142     8077                       Alien³  ...        6.367       5491
+151      440  Aliens vs Predator: Requiem  ...        5.169       2816
+157  1179558                   15 Cameras  ...        6.111         18
+177   444483                   Vassalord.  ...        5.385         13
+178  1308757                     Dead Sea  ...        6.934         99
+179  1111873                      Abigail  ...        6.824        983
+180  1265517  You Shall Not Sleep Tonight  ...        0.000          0
+
+[47 rows x 7 columns]
+[2024-08-28T03:41:18.016+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-08-28T03:41:18.026+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-08-28T03:41:18.027+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=movies_dag, task_id=leer_api, run_id=manual__2024-08-28T03:41:06.582406+00:00, execution_date=20240828T034106, start_date=20240828T034113, end_date=20240828T034118
+[2024-08-28T03:41:18.063+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-08-28T03:41:18.083+0000] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-08-28T03:41:18.086+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

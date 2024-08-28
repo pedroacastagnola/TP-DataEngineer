@@ -1,3 +1,4 @@
 .venv
 .env
-modules/__pycache__/*.pyc
+dags/__pycache__
+dags/modules/__pycache__

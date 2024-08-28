@@ -1,16 +1,16 @@
 import pandas as pd
 import requests
-import toml
+#import toml
 
 class ApiData:
     def __init__(self):
 
-        with open('config/config.toml', 'r') as f:
-            config = toml.load(f)
+        #with open('config/config.toml', 'r') as f:
+        #    config = toml.load(f)
 
-        self.genero=config['filtros']['genero']
-        self.cantPaginas=config['filtros']['cantPaginas']
-        self.url =f"{config['api']['url']}?api_key={config['api']['key']}"
+        self.genero=27#config['filtros']['genero']
+        self.cantPaginas=10#config['filtros']['cantPaginas']
+        self.url ="https://api.themoviedb.org/3/discover/movie?api_key=6ceef2635cf1b5e53898952f9183a67e"#f"{config['api']['url']}?api_key={config['api']['key']}"
 
     def getDataFromTMBD(self):
         df=pd.DataFrame()
@@ -26,6 +26,7 @@ class ApiData:
         pelisXGen=dataXGen[dataXGen['genre_ids'] == self.genero]
         columns=['id','title','original_language','overview','release_date','vote_average','vote_count']
 
+        print(pelisXGen[columns])
         return (pelisXGen[columns])
 
 

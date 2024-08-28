@@ -22,6 +22,7 @@ class BDConnect:
 
     def get_connection(self):
         try:
+            print(self.user)
             logging.info("Connecting to database...")
             return create_engine(
                 url="postgresql+psycopg2://{0}:{1}@{2}:{3}/{4}".format(self.user, self.password, self.host, self.port, self.database)
@@ -75,10 +76,14 @@ class BDConnect:
 
     def upload_data(self,APIdata,BDdata,table):
         try:
+            print("1",APIdata)
+            print("2",BDdata)
+            print(table)
             sinDuplicados=APIdata[~APIdata['id'].isin(BDdata)].copy()
+            print("3",sinDuplicados)
             if not(sinDuplicados.empty):
                 sinDuplicados.loc[:,'insert_date']=datetime.now()
-                logging.info("Uploading new data: "+str(sinDuplicados.to_dict()))
+                print("Uploading new data: "+str(sinDuplicados.to_dict()))
                 sinDuplicados.to_sql(
                     name=table,
                     con=self.engine,
