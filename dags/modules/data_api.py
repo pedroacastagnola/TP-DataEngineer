@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 #import toml
+import json
 
 class ApiData:
     def __init__(self):
@@ -8,9 +9,12 @@ class ApiData:
         #with open('config/config.toml', 'r') as f:
         #    config = toml.load(f)
 
-        self.genero=27#config['filtros']['genero']
-        self.cantPaginas=10#config['filtros']['cantPaginas']
-        self.url ="https://api.themoviedb.org/3/discover/movie?api_key=6ceef2635cf1b5e53898952f9183a67e"#f"{config['api']['url']}?api_key={config['api']['key']}"
+        with open('config/config2.json', 'r') as APIconfig:
+            config = json.load(APIconfig)
+
+        self.genero=config['filtros']['genero'] #27
+        self.cantPaginas=config['filtros']['cantPaginas'] #10
+        self.url =f"{config['api']['url']}?api_key={config['api']['key']}" #"https://api.themoviedb.org/3/discover/movie?api_key=6ceef2635cf1b5e53898952f9183a67e"
 
     def getDataFromTMBD(self):
         df=pd.DataFrame()

@@ -1,0 +1,13 @@
+{
+    "api":
+        {
+            "url": "https://api.themoviedb.org/3/discover/movie",
+            "key": "6ceef2635cf1b5e53898952f9183a67e"
+        },
+
+    "filtros":
+        {
+            "genero":27,
+            "cantPaginas":10
+        }
+}
