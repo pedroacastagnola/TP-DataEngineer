@@ -25,17 +25,17 @@ with DAG(
 
     
         task_1 = PythonOperator(
-            task_id='leer_data',
+            task_id='leer_BD',
             python_callable=interfaz.leerTabla
         )
 
         task_2 = PythonOperator(
-            task_id='leer_api',
+            task_id='leer_API',
             python_callable=interfaz.leerAPI
         )
 
         task_3 = PythonOperator(
-            task_id='subir_data',
+            task_id='subir_peli_nueva',
             python_callable=interfaz.cargarData
         )
 

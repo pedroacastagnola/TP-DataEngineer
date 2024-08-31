@@ -19,7 +19,7 @@ if __name__ == '__main__':
       
       datafra=pd.read_json('data/data_api.json')
 
-      print('fra',datafra)
+      #print('fra',datafra)
       #print ("JSON",data,"EEEEEEE")
       
       schema='pedroacastagnola_coderhouse'
@@ -32,13 +32,8 @@ if __name__ == '__main__':
                   "REDSHIFT_DBNAME" : os.getenv('REDSHIFT_DBNAME')
             }
 
-      bd=BDConnect(user_credentials,schema)
-      bd.read_data(table)
+      #bd=BDConnect(user_credentials,schema)
+      #bd.read_data(table)
 
-      listaBD=[]
-      with open('data/data_BD.csv', 'r',newline='') as csvfile:
-                  reader = csv.reader(csvfile,delimiter=',')
-                  for row in reader:
-                        if(row):
-                              listaBD=row
-                              print(listaBD)
+      algo=readCSV()
+      print(algo)

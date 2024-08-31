@@ -7,8 +7,11 @@ def writeCSV(dataBD):
         writer.writerow(dataBD)
 
 def readCSV():
+    lista=[]
     with open('data/data_BD.csv', 'r',newline='') as csvfile:
         reader = csv.reader(csvfile,delimiter=',')
         for row in reader:
             if(row):
-                return row
+                lista=[int(i) for i in row]
+    
+    return lista

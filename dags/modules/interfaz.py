@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from modules import BDConnect,ApiData
 
 logging.basicConfig(
-    filename='logs/app.log',
+    filename='/logs/app.log',
     format='%(asctime)s -> %(levelname)s - %(message)s',
     level=logging.INFO)
 
@@ -42,15 +42,7 @@ class Interfaz:
 
     def cargarData(self):
         try:
-            #self.BDdata=self.bd.read_data(self.schema,self.table)
-            #self.APIdata=self.api.getDataFromTMBD()
             self.bd.upload_data(self.table)
             #self.bd.close()
         except Exception as ex:
             logging.error(ex)
-
-
-    #api=ApiData()
-    #APIdata=api.getDataFromTMBD()
-    #bd.upload_data(APIdata,BDdata,table)
-    #bd.close()

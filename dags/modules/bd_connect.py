@@ -5,7 +5,7 @@ import pandas as pd
 import logging
 
 logging.basicConfig(
-    filename='logs/app.log',
+    filename='C:/Python/TP-DataEngineer/logs/app.log',
     format='%(asctime)s -> %(levelname)s - %(message)s',
     level=logging.INFO)
 
@@ -81,11 +81,10 @@ class BDConnect:
     def upload_data(self,table):
         try:
             APIdata=pd.read_json('data/data_api.json', orient="records")
-            print("1",APIdata)
+            print("API: ",APIdata)
             BDdata=readCSV()
-            print("2",BDdata)
+            print("DB: ",BDdata)
             sinDuplicados=APIdata[~APIdata['id'].isin(BDdata)].copy()
-            print("3",sinDuplicados)
             if not(sinDuplicados.empty):
                 sinDuplicados.loc[:,'insert_date']=datetime.now()
                 print("Uploading new data: "+str(sinDuplicados.to_dict()))
