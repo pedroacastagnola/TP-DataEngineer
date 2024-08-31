@@ -30,7 +30,7 @@ class Interfaz:
 
     def leerTabla(self):
         try:
-            self.BDdata=self.bd.read_data(self.schema,self.table)
+            self.BDdata=self.bd.read_data(self.table)
         except Exception as ex:
             logging.error(ex)
 
@@ -42,9 +42,9 @@ class Interfaz:
 
     def cargarData(self):
         try:
-            self.BDdata=self.bd.read_data(self.schema,self.table)
-            self.APIdata=self.api.getDataFromTMBD()
-            self.bd.upload_data(self.APIdata,self.BDdata,self.table)
+            #self.BDdata=self.bd.read_data(self.schema,self.table)
+            #self.APIdata=self.api.getDataFromTMBD()
+            self.bd.upload_data(self.table)
             #self.bd.close()
         except Exception as ex:
             logging.error(ex)

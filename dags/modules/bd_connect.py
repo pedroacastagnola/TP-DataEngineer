@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
 from datetime import datetime
+from modules.files import writeCSV,readCSV
 import pandas as pd
 import logging
 
@@ -19,10 +20,10 @@ class BDConnect:
         self.schema=schema
         self.engine= self.get_connection()
         
+        
 
     def get_connection(self):
         try:
-            print(self.user)
             logging.info("Connecting to database...")
             return create_engine(
                 url="postgresql+psycopg2://{0}:{1}@{2}:{3}/{4}".format(self.user, self.password, self.host, self.port, self.database)
@@ -42,17 +43,20 @@ class BDConnect:
             raise Exception("Checking connection query failed",e)
         
 
-    def read_data(self,schema,table):
+    def read_data(self,table):
         try:
+            
             cr=self.engine.raw_connection().cursor()
-            cr.execute(f"SELECT id FROM {schema}.{table};")
+            cr.execute(f"SELECT id FROM {self.schema}.{table};")
             data=cr.fetchall()
             if (data== None):
                 logging.info("Table doesn't contain any data")
             else:
                 logging.info("Movie ids found in DB: "+str(data))
                 
-            return self.tuple_list_into_list(data)
+            ids=self.tuple_list_into_list(data)
+            print(ids)
+            writeCSV(ids)
             
         except Exception as e:
             raise Exception("Checking connection query failed",e)
@@ -74,11 +78,12 @@ class BDConnect:
             raise Exception("Deleting all data from table failed",e)
 
 
-    def upload_data(self,APIdata,BDdata,table):
+    def upload_data(self,table):
         try:
+            APIdata=pd.read_json('data/data_api.json', orient="records")
             print("1",APIdata)
+            BDdata=readCSV()
             print("2",BDdata)
-            print(table)
             sinDuplicados=APIdata[~APIdata['id'].isin(BDdata)].copy()
             print("3",sinDuplicados)
             if not(sinDuplicados.empty):
