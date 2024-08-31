@@ -11,11 +11,12 @@ Dudas y aclaraciones pre-entrega 3:
 3. Me tiraba un error de module not found en airflow cuando quería leer la línea "import toml" en una de las clases. Es por eso que cambié el toml por un json "config2.json" para leer esos datos. ¿Cómo podría hacer para que me tome correctamente el import toml?
 
 Para correr el código:
-1. Pararse en "main"
-2. Correr comando "docker-compose up airflow-init"
-3. Correr comando "docker-compose up"
-4. Loguearse en airflow con user= airflow, pass=airflow
-5. Triggerear el dag
+1. Asegurarse de haber creado la tabla en la base usando el archivo sql_creation.sql que se encuentra en la carpeta sql
+2. Pararse en "main"
+3. Correr comando "docker-compose up airflow-init"
+4. Correr comando "docker-compose up"
+5. Loguearse en airflow con user= airflow, pass=airflow
+6. Triggerear el dag
 
 
 -------------------------------------------------------
