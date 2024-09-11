@@ -1,8 +1,8 @@
 
 Para correr el código:
-1. Asegurarse de haber creado la tabla en la base usando el archivo sql_creation.sql que se encuentra en la carpeta sql
-2. Pararse en branch "main"
-3. Completar campos en .env
+1. Pararse en branch "main"
+2. Asegurarse de haber creado la tabla en la base usando el archivo sql_creation.sql que se encuentra en la carpeta sql
+3. Completar valores faltantes en .env
 4. Correr comando "docker-compose up airflow-init"
 5. Correr comando "docker-compose up"
 6. Loguearse en airflow con user= airflow, pass=airflow
