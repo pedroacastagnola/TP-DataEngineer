@@ -1,4 +1,5 @@
 import csv
+import json
 
 
 def writeCSV(dataBD):
@@ -15,3 +16,10 @@ def readCSV():
                 lista=[int(i) for i in row]
     
     return lista
+
+def readJson():
+    with open("data/new_data.json", "r") as read_file:
+        obj = json.load(read_file)
+ 
+        pretty_json = json.dumps(obj, indent=2)
+    return pretty_json

@@ -31,7 +31,7 @@ class ApiData:
         columns=['id','title','original_language','overview','release_date','vote_average','vote_count']
 
         print(pelisXGen[columns])
-        pelisXGen[columns].to_json(r'data/data_api.json',orient='records')
+        pelisXGen[columns].to_json(r'data/data_api.json',orient='records',indent=4)
         return (pelisXGen[columns])
 
 

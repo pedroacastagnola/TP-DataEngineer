@@ -85,6 +85,7 @@ class BDConnect:
             BDdata=readCSV()
             print("DB: ",BDdata)
             sinDuplicados=APIdata[~APIdata['id'].isin(BDdata)].copy()
+            sinDuplicados.to_json(r'data/new_data.json',orient='records',indent=2)
             if not(sinDuplicados.empty):
                 sinDuplicados.loc[:,'insert_date']=datetime.now()
                 print("Uploading new data: "+str(sinDuplicados.to_dict()))
@@ -101,7 +102,6 @@ class BDConnect:
             
         except Exception as e:
             raise Exception("Error when uploading data: ",e)
-            
 
     def close(self):
         self.engine.dispose()
